@@ -1,11 +1,11 @@
 {
   "name": "turbo-slider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian Bustos",
   "license": "ISC",
-  "description": ""
+  "description": "A lightweight package to dispay items in a list as a slider. Turbo slider leverages native scrolling with modern CSS-features as 'scroll-snap', creating a natural feel on any touch enabled device."
 }
