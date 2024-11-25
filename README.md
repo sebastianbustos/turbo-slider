@@ -1,6 +1,6 @@
 # Turbo slider
 
-A lightweight package to dispay items in a list as a slider. Turbo slider leverages native scrolling with modern CSS-features as 'scroll-snap', creating a natural feel on any touch enabled device.
+A lightweight package to dispay items in a list as a slider. Turbo slider leverages native scrolling with modern CSS-features as '[scroll-snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap)', creating a natural feel on any touch enabled device.
 
 ## Usage
 
