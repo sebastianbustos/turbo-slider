@@ -58,10 +58,10 @@ new turboSlider({
   customSelector: string,
 
   // Disable the native scrollbar (default: false)
-  disableScrollbar: boolean
+  disableScrollbar: boolean,
 
   // Set the width of the items in the slider. It can be a relative or absolute value (default: auto)
-  itemWidth: string
+  itemWidth: string,
 
   // Set the distance between scrollbar and slider items (default: 2rem)
   scrollbarMargin: string 
