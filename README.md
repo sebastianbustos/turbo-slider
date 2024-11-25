@@ -32,22 +32,22 @@ Index.html:
 
 ```html
 <div class="turbo-slider">
-    <div class="button-group">
-      <button class="t-slide-prev" aria-label="Previous" data-ts-prev></button>
-      <button class="t-slide-next" aria-label="Next" data-ts-next></button>
-    </div>
-    <ol>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-      <li>Item 6</li>
-      <li>Item 7</li>
-      <li>Item 8</li>
-      <li>Item 9</li>
-    </ol>
+  <div class="button-group">
+    <button class="t-slide-prev" aria-label="Previous" data-ts-prev></button>
+    <button class="t-slide-next" aria-label="Next" data-ts-next></button>
   </div>
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+    <li>Item 7</li>
+    <li>Item 8</li>
+    <li>Item 9</li>
+  </ol>
+</div>
 ```
 
 ## Options
