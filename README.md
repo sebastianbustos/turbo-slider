@@ -4,34 +4,42 @@ A lightweight package to dispay items in a list as a slider. Turbo slider levera
 
 ## Usage
 
-Install package from npm:
+Install the package from npm:
 
 ```javascript
 npm i turbo-slider
 ```
 
-Index.js:
+Import the package in the javascript-file where you want to initialize the Turbo slider:
 
 ```javascript
-// Import the package
-import turboSlider from 'turbo-slider';
+import TurboSlider from 'turbo-slider';
+```
 
-// Initialize without options...
-new turboSlider();
+You can initialize it without any provided options:
+```javascript
+const turboSlider = new TurboSlider();
 
-// ...or initialize with options:
-new turboSlider({
+turboSlider.init();
+```
+
+Or if you prefer, initialize it with custom options:
+
+```javascript
+const turboSlider = new TurboSlider({
   customSelector: ".custom-selector",
   disableScrollbar: true,
   itemWidth: "250px",
   scrollbarMargin: "100px",
 });
+
+turboSlider.init();
 ```
 
 Index.html:
 
 ```html
-<div class="turbo-slider">
+<div id="turbo-slider" class="turbo-slider">
   <div class="button-group">
     <button class="t-slide-prev" aria-label="Previous" data-ts-prev></button>
     <button class="t-slide-next" aria-label="Next" data-ts-next></button>
@@ -49,12 +57,29 @@ Index.html:
   </ol>
 </div>
 ```
+## Multiple sliders
+On occasions the amount of sliders is rendered programmatically, you can simply render a new instance of the slider inside a loop:
 
+
+```javascript
+const sliders = document.querySelectorAll(".turbo-slider");
+
+sliders.forEach((slider => {
+  const turboSlider = new TurboSlider({
+    customSelector: `#${slider.id}`,
+    disableScrollbar: false,
+    scrollbarMargin: "20px",
+    itemWidth: "250px"
+  });
+
+  turboSlider.init();
+}));
+```
 ## Options
 
 ```javascript
-new turboSlider({
-  // Initialize slider on custom element (default: div[data-js-turboslider])
+const turboSlider = new TurboSlider({
+  // Initialize slider on custom element (default: '#turbo-slider')
   customSelector: string,
 
   // Disable the native scrollbar (default: false)

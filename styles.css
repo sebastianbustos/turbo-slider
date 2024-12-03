@@ -65,7 +65,6 @@
     display: none;
 }
 
-
 .turbo-slider ol li {
     flex-shrink: 0;
     scroll-snap-align: start;

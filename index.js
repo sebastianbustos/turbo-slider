@@ -1,26 +1,15 @@
 import './styles.css';
 
-let settings = {}
+export default class TurboSlider {
+    constructor(props) {
+        this.customSelector = props?.customSelector ? props.customSelector : '#turbo-slider';
+        this.itemWidth = props?.itemWidth ? props.itemWidth : 'auto';
+        this.scrollbarMargin = props?.scrollbarMargin ? props.scrollbarMargin : '2rem';
+        this.disableScrollbar = props?.disableScrollbar ? true : false;
+    }
 
-const turboSlider = {
-    _init: function (props) {
-        settings.customSelector = props?.customSelector ? props.customSelector : 'div[data-js-turboslider]';
-        settings.itemWidth = props?.itemWidth ? props.itemWidth : 'auto';
-        settings.scrollbarMargin = props?.scrollbarMargin ? props.scrollbarMargin : '2rem';
-        settings.disableScrollbar = props?.disableScrollbar ? true : false;
-
-        turboSlider._getAllSliders();
-    },
-    _getAllSliders: function () {
-        const sliders = document.querySelectorAll(settings.customSelector);
-
-        if (sliders.length > 0) {
-            sliders.forEach((slider) => {
-                turboSlider._addEvents(slider);
-            });
-        }
-    },
-    _addEvents: function (slider) {
+    init() {
+        const slider = document.querySelector(`${this.customSelector}`);
         const sliderTrack = slider.querySelector("ol");
         const navigateLeft = slider.querySelector('button[data-ts-prev]');
         const navigateRight = slider.querySelector('button[data-ts-next]');
@@ -32,27 +21,25 @@ const turboSlider = {
         }
         if (navigateRight) {
             navigateRight.addEventListener('click', (e) => {
-                sliderTrack.scrollBy({ left: 250, behavior: 'smooth' });
+                sliderTrack.scrollBy({ left: 200, behavior: 'smooth' });
             });
         }
 
-        turboSlider._setProps(sliderTrack);
-    },
-    _setProps: function (sliderTrack) {
+        this.setProps(sliderTrack);
+    }
+
+    setProps(sliderTrack) {
         const sliderItems = sliderTrack.querySelectorAll("li");
 
         sliderItems.forEach(sliderItem => {
-            sliderItem.style.width = settings.itemWidth;
+            sliderItem.style.width = this.itemWidth;
         });
 
-
-        if (settings.disableScrollbar) {
+        if (this.disableScrollbar) {
             sliderTrack.classList.add("unscroll");
         }
         else {
-            sliderTrack.style.paddingBottom = settings.scrollbarMargin;
+            sliderTrack.style.paddingBottom = this.scrollbarMargin;
         }
     }
-};
-
-export default turboSlider._init;
+}
